@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">HomeWork</string>
     <string name="hello_world_colors">Hello World Colors!!!</string>
+    <string name="hello_world_colors_v2">Hello World Colors v2!!!</string>
+    <string name="btn_name">Жми</string>
+    <string name="second_activity">second Activity</string>
+    <string name="todo">TODO</string>
+    <string name="textview">TextView</string>
 </resources>

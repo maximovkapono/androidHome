@@ -2,9 +2,9 @@ package com.example.anmaksimov.homework
 
 import android.app.Activity
 import android.app.Application
+import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
-import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
@@ -27,17 +27,19 @@ class MainActivity : AppCompatActivity() {
     override fun onConfigurationChanged(newConfig: Configuration?) {
         super.onConfigurationChanged(newConfig)
         val orientation = newConfig?.orientation
-        val view = findViewById<View>(R.id.my_layout)
         when (orientation) {
             Configuration.ORIENTATION_LANDSCAPE -> {
-                val color = ContextCompat.getColor(applicationContext, R.color.horizontal)
-                view.setBackgroundColor(color)
+                setContentView(R.layout.activity_main)
             }
             Configuration.ORIENTATION_PORTRAIT -> {
-                val color = ContextCompat.getColor(applicationContext, R.color.vertical)
-                view.setBackgroundColor(color)
+                setContentView(R.layout.activity_main)
             }
         }
+    }
+
+    fun handleClick(arg0: View) {
+        val intent = Intent(baseContext, SecondActivity::class.java)
+        startActivity(intent)
     }
 
     class MyActivityLifecycleCallbacks : Application.ActivityLifecycleCallbacks {
